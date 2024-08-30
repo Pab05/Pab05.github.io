@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of Prediction</title>
+  <style>
+    body {
+      background-color: #1d1d1d;
+      color: #f0e68c;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+      color: #ff4500;
+      letter-spacing: 2px;
+    }
+
+    .image-container {
+      margin-top: 40px;
+    }
+
+    .magic-image {
+      max-width: 45%;
+      border: 5px solid #ff4500;
+      border-radius: 10px;
+      box-shadow: 0px 0px 25px 5px rgba(255, 69, 0, 0.6);
+    }
+
+    /* Poker Cards at the sides and top */
+    .side-images {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .side-image {
+      width: 60px;
+      opacity: 0.8;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .side-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Corner cards */
+    .corner-cards {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: 90px;
+      opacity: 0.9;
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .corner-cards-right {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 90px;
+      opacity: 0.9;
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .corner-cards:hover, .corner-cards-right:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #aaa;
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-images">
+    <img class="side-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_club_A.svg/200px-Playing_card_club_A.svg.png" alt="Card 1">
+    <img class="side-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/200px-Playing_card_heart_A.svg.png" alt="Card 2">
+  </div>
+
+  <h1>The Art of Prediction</h1>
+
+  <div class="image-container">
+    <img id="prediction" class="magic-image" src="https://firebasestorage.googleapis.com:443/v0/b/voila-331b9.appspot.com/o/mail%2F001901.2b76184be94e4357b311a73c497f4992.1715%2F001901.2b76184be94e4357b311a73c497f4992.1715.jpg?alt=media&token=75ffbff7-760f-4853-a4cf-65c93c65b325">
+  </div>
+
+  <!-- Cards in the bottom corners -->
+  <img class="corner-cards" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png" alt="As de Picas">
+  <img class="corner-cards-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_diamond_A.svg/200px-Playing_card_diamond_A.svg.png" alt="As de Diamantes">
+
+  <footer>
+    © 2024 The Magic of Prediction. All rights reserved.
+  </footer>
+
+  <script>
+    function refresh_image() {
+      document.getElementById("prediction").src = "https://firebasestorage.googleapis.com:443/v0/b/voila-331b9.appspot.com/o/mail%2F001901.2b76184be94e4357b311a73c497f4992.1715%2F001901.2b76184be94e4357b311a73c497f4992.1715.jpg?alt=media&token=75ffbff7-760f-4853-a4cf-65c93c65b325=" + Math.random();
+    }
+
+    setInterval(refresh_image, 5000);
+  </script>
+</body>
+</html>
